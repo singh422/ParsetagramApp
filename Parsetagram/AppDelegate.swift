@@ -18,13 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+//        Parse.initialize(
+//            with: ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
+//                configuration.applicationId = "Parsetagram"
+//                configuration.clientKey = "idhsbfhafkdsnvberhifq0090erfoncijweuh9h32d"
+//                configuration.server = "https://morning-crag-93823.herokuapp.com/parse"
+//            })
+//        )
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
                 configuration.applicationId = "Parsetagram"
-                configuration.clientKey = "idhsbfhafkdsnvberhifq0090erfoncijweuh9h32d"
-                configuration.server = "https://morning-crag-93823.herokuapp.com/parse"
+                configuration.clientKey = "ksdhfkjasdkfhosdjlf"
+                configuration.server = "https://warm-lowlands-19700.herokuapp.com/parse"
             })
         )
+        
         if(PFUser.current() != nil) {
             print("There is current user")
             

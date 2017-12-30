@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+
 class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     var posts : [PFObject]?
@@ -23,29 +24,13 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
          let refreshControl = UIRefreshControl()
             refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControlEvents.valueChanged)
         photosTableView.insertSubview(refreshControl, at: 0)
-    
-        // construct PFQuery
-        let query = PFQuery(className: "Post")
-        query.order(byDescending: "createdAt")
-        query.includeKey("author")
-        query.limit = 20
-        
-        // fetch data asynchronously
-        query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
-            if let posts = posts {
-                self.posts = posts
-                self.photosTableView.reloadData()
-                print(self.posts)
-            } else {
-                print(error!.localizedDescription)
-            }
-        }
+            
+        makeNetworkRequest()
         // Do any additional setup after loading the view.
     }
     
     
-    func refreshControlAction(_ refreshControl: UIRefreshControl) {
-        // construct PFQuery
+    func makeNetworkRequest(){
         let query = PFQuery(className: "Post")
         query.order(byDescending: "createdAt")
         query.includeKey("author")
@@ -56,13 +41,19 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             if let posts = posts {
                 self.posts = posts
                 self.photosTableView.reloadData()
-                print(self.posts)
-              refreshControl.endRefreshing()
+//                print(self.posts)
+                
             } else {
                 print(error!.localizedDescription)
             }
         }
+    }
+    
+    
+    func refreshControlAction(_ refreshControl: UIRefreshControl) {
         
+        makeNetworkRequest()
+        refreshControl.endRefreshing()
         // Do any additional setup after loading the view.
      
     }
@@ -81,9 +72,12 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotosTableViewCell
         if posts != nil{
-        let post = posts?[indexPath.row]
+        let post = posts![indexPath.row]
+        
+        
+            
         cell.post = post
-            print("caption labels")
+//            print("caption labels")
         print(cell.captionLabel)
         }
         return cell
@@ -100,7 +94,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             if let posts = posts {
                 self.posts = posts
                 self.photosTableView.reloadData()
-                print(self.posts)
+//                print(self.posts)
             } else {
                 print(error!.localizedDescription)
             }

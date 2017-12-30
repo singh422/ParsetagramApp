@@ -2,7 +2,7 @@
 
 **Parsetagram** is a photo sharing app using Parse as its backend.
 
-Time spent: **2** hours spent in total
+Time spent: **2.5** hours spent in total
 
 ## User Stories
 
@@ -14,11 +14,11 @@ The following **required** functionality is completed:
 - [X] User can take a photo, add a caption, and post it to "Instagram" (+2pt)
 - [X] User can view the last 20 posts submitted to "Instagram" (+2pt)
 - [X] User can pull to refresh the last 20 posts submitted to "Instagram" (+1pt)
-- [ ] User can tap a post to view post details, including timestamp and caption (+2pt)
+- [X] User can tap a post to view post details, including timestamp and caption (+2pt)
 
 The following **optional** features are implemented:
 
-- [x] Style the login page to look like the real Instagram login page (+1pt)
+- [X] Style the login page to look like the real Instagram login page (+1pt)
 - [ ] Style the feed to look like the real Instagram feed (+1pt)
 - [ ] User can use a tab bar to switch between all "Instagram" posts and posts published only by the user. AKA, tabs for Home Feed and Profile (+2pt)
 - [ ] Add a custom camera using the CameraManager library (+1pt)
@@ -48,7 +48,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/X6mI0Ge.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/8AfXaE8.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -65,7 +65,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright [2017] [Avinash Singh]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
